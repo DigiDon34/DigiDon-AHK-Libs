@@ -1,20 +1,13 @@
 ﻿;**********************************************************
-;DISCLAIMER
-;**********************************************************
-;AHK OPERATORS FUNCTIONS
-;By DigiDon
+;AHK OPERATORS FUNCTIONS - By DigiDon
 ;No License : Feel free to use it anyhow you want
-;WARNING : THIS IS A BETA : UNTESTED FULLY SO MIGHT BE ERRORS OR IMPROVEMENTS TO DO
-;WARNING : NO WARRANTIES AT ALL ;)
+;WARNING : THIS IS A BETA : UNTESTED FULLY SO MIGHT BE ERRORS OR IMPROVEMENTS TO DO, NO WARRANTIES AT ALL ;)
 ;**********************************************************
-; Added _F to make sure no conflict e.g. obfuscation
-;You can delete it if no need, might be easier to use
-; ex : 
-; msgbox % ADD(MULT(1,2,3),DIV(2,3,4))
+; Added _F at the end of function names to make sure no conflict e.g. obfuscation BUT YOU CAN DELETE IT if no need, might be easier to use
+; ex : msgbox % ADD_F(MULT_F(1,2,3),DIV_F(2,3,4))
 ;**********************************************************
-;Missing (because of not really understanding it) :
-; Bitwisenot, Address, Dereference, 
-; Bitwise-and (&), bitwise-exclusive-or (^), and bitwise-or (|)
+;Missing (because not really sure of understanding it) :
+; Bitwisenot, Address, Dereference, Bitwise-and (&), bitwise-exclusive-or (^), and bitwise-or (|)
 ;**********************************************************
 ;LIST OF FUNCTIONS
 ;**********************************************************
@@ -56,12 +49,7 @@
 ; ;these line below have 9 fct that should all be equals to 9
 ; ,NOT_F(nonvar)*9,ADD_F(4,3,2),MINUS_F(14,3,2),MULT_F(3,3,1),DIV_F(27,3,1),POWER_F(3,2),FLOORDIV_FU(29,3),INCREM_FU(8),DECREM_FU(10))
 ; ;all below should be true
-; ,OR_F(IS_F(testvar,testvar2),IS_F(testvar,nonvar))
-; ,LESS_F(1,2,3,4,5,6)
-; ,LESSorEQ_F(1,1,2,3,4,5)
-; ,GREATER_F(6,5,4,3,2,1)
-; ,GREATERorEQ_F(6,6,5,4,3,2)
-; ,CASEEQUAL_F(testvar,CONCAT_F(testvar,nonvar)))
+; ,OR_F(IS_F(testvar,testvar2),IS_F(testvar,nonvar)) ,LESS_F(1,2,3,4,5,6) ,LESSorEQ_F(1,1,2,3,4,5) ,GREATER_F(6,5,4,3,2,1) ,GREATERorEQ_F(6,6,5,4,3,2) ,CASEEQUAL_F(testvar,CONCAT_F(testvar,nonvar)))
 ; msgbox OK
 ; else
 ; msgbox one statement was false
@@ -76,10 +64,10 @@ LESS_F(var1,varlist*) {
 		exit
 		}
 	if var1 is not number 
-			{
-			msgbox MATH FCT VARIADIC %A_ThisFunc% ERROR : %value% is not a number
-			exit
-			}
+		{
+		msgbox MATH FCT VARIADIC %A_ThisFunc% ERROR : %value% is not a number
+		exit
+		}
 	for index,value in varlist
 		if value is not number 
 			{
@@ -97,10 +85,10 @@ LESSorEQ_F(var1,varlist*) {
 		exit
 		}
 	if var1 is not number 
-			{
-			msgbox MATH FCT VARIADIC %A_ThisFunc% ERROR : %value% is not a number
-			exit
-			}
+		{
+		msgbox MATH FCT VARIADIC %A_ThisFunc% ERROR : %value% is not a number
+		exit
+		}
 	for index,value in varlist
 		if value is not number 
 			{
